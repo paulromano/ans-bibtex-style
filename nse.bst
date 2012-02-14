@@ -1,9 +1,9 @@
-%% #define NSE 1		% Fri Jun 15 10:51:17 1990
+%% #define NSE 1        % Fri Jun 15 10:51:17 1990
 %% #include "TEX$ROOT:[BIBTEX]PHYSICS.BTX"
-	% Please notify Charles Karney (Karney@Princeton.EDU)
-	% of any bugs, improvements, etc.
+    % Please notify Charles Karney (Karney@Princeton.EDU)
+    % of any bugs, improvements, etc.
 
-	% For Nuclear Science and Engineering
+    % For Nuclear Science and Engineering
     % Changes made by Paul K. Romano to match style for Nucl. Sci. Eng.
     % Sep. 19, 2010
     %   - Added FUNCTION quote and used on format.title
@@ -14,14 +14,14 @@
     %   - Removed "Technical Report" prefix
     %   - Year for technical report in parentheses
 
-	% version 0.99b for BibTeX versions 0.99a or later, LaTeX version 2.09.
-	% Copyright (C) 1985, all rights reserved.
-	% Copying of this file is authorized only if either
-	% (1) you make absolutely no changes to your copy, including name, or
-	% (2) if you do make changes, you name it something other than
-	% btxbst.doc, plain.bst, unsrt.bst, alpha.bst, and abbrv.bst.
-	% This restriction helps ensure that all standard styles are identical.
-	% The file btxbst.doc has the documentation for this style.
+    % version 0.99b for BibTeX versions 0.99a or later, LaTeX version 2.09.
+    % Copyright (C) 1985, all rights reserved.
+    % Copying of this file is authorized only if either
+    % (1) you make absolutely no changes to your copy, including name, or
+    % (2) if you do make changes, you name it something other than
+    % btxbst.doc, plain.bst, unsrt.bst, alpha.bst, and abbrv.bst.
+    % This restriction helps ensure that all standard styles are identical.
+    % The file btxbst.doc has the documentation for this style.
 
 ENTRY
 % Fields:
@@ -253,15 +253,15 @@ FUNCTION {output.nonnull}
   output.state mid.sentence =
     { ", " * write$ }
     { output.state after.block =
-	{ "," * write$
-	  newline$
-	  "\newblock " write$
-	}
-	{ output.state before.all =
-	    'write$
-	    { add.period$ " " * write$ }
-	  if$
-	}
+    { "," * write$
+      newline$
+      "\newblock " write$
+    }
+    { output.state before.all =
+        'write$
+        { add.period$ " " * write$ }
+      if$
+    }
       if$
       mid.sentence 'output.state :=
     }
@@ -503,7 +503,7 @@ FUNCTION {paren}
 FUNCTION {quote}
 { duplicate$ empty$
     { pop$ "" }
-	{ "``" swap$ * "''" * }
+    { "``" swap$ * "''" * }
   if$
 }
 
@@ -525,26 +525,26 @@ FUNCTION {format.names}
   if$
     { namesleft #0 > }
     { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
-	  t "others" =
-		'skip$
-		{ t "u" change.case$ 't := }
-	  if$
+      t "others" =
+        'skip$
+        { t "u" change.case$ 't := }
+      if$
       nameptr #1 >
-	{ namesleft #1 >
-	    { ", " * t * }
-	    { nameptr #2 >
-		{ "," * }
-		'skip$
-	      if$
-	      t "others" =
-	      etal or
-		{ " et~al." * }
-		{ " and " * t * }
-	      if$
-	    }
-	  if$
-	}
-	't
+    { namesleft #1 >
+        { ", " * t * }
+        { nameptr #2 >
+        { "," * }
+        'skip$
+          if$
+          t "others" =
+          etal or
+        { " et~al." * }
+        { " and " * t * }
+          if$
+        }
+      if$
+    }
+    't
       if$
       nameptr #1 + 'nameptr :=
       namesleft #1 - 'namesleft :=
@@ -897,8 +897,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-	{ "in " booktitle emphasize * }
-	{ "in " booktitle emphasize * ", " * format.edited * }
+    { "in " booktitle emphasize * }
+    { "in " booktitle emphasize * ", " * format.edited * }
       if$
     }
   if$
