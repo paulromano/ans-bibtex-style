@@ -1532,131 +1532,18 @@ FUNCTION {default.type} { misc }
 
 
 MACRO {jan} {"Jan."}
-
 MACRO {feb} {"Feb."}
-
 MACRO {mar} {"Mar."}
-
 MACRO {apr} {"Apr."}
-
 MACRO {may} {"May"}
-
 MACRO {jun} {"June"}
-
 MACRO {jul} {"July"}
-
 MACRO {aug} {"Aug."}
-
 MACRO {sep} {"Sept."}
-
 MACRO {oct} {"Oct."}
-
 MACRO {nov} {"Nov."}
-
 MACRO {dec} {"Dec."}
 
-
-% Journals are either written out in full or abbreviated;
-% the abbreviations are like those found in ACM publications.
-%
-% To get a completely different set of abbreviations, it may be best to make
-% a separate .bib file with nothing but those abbreviations; users could then
-% include that file name as the first argument to the \bibliography command
-
-
-MACRO {acmcs} {"ACM Comput. Surv."}
-
-MACRO {acta} {"Acta Inf."}
-
-MACRO {cacm} {"Commun. ACM"}
-
-MACRO {ibmjrd} {"IBM J. Res. Dev."}
-
-MACRO {ibmsj} {"IBM Syst.~J."}
-
-MACRO {ieeese} {"IEEE Trans. Softw. Eng."}
-
-MACRO {ieeetc} {"IEEE Trans. Comput."}
-
-MACRO {ieeetcad}
- {"IEEE Trans. Comput.-Aided Design Integrated Circuits"}
-
-MACRO {ipl} {"Inf. Process. Lett."}
-
-MACRO {jacm} {"J.~ACM"}
-
-MACRO {jcss} {"J.~Comput. Syst. Sci."}
-
-MACRO {scp} {"Sci. Comput. Programming"}
-
-MACRO {sicomp} {"SIAM J. Comput."}
-
-MACRO {tocs} {"ACM Trans. Comput. Syst."}
-
-MACRO {tods} {"ACM Trans. Database Syst."}
-
-MACRO {tog} {"ACM Trans. Gr."}
-
-MACRO {toms} {"ACM Trans. Math. Softw."}
-
-MACRO {toois} {"ACM Trans. Office Inf. Syst."}
-
-MACRO {toplas} {"ACM Trans. Prog. Lang. Syst."}
-
-MACRO {tcs} {"Theoretical Comput. Sci."}
-
-MACRO {advp} {"Adv. Phys."}
-MACRO {ajp} {"Am. J. Phys."}
-MACRO {ao} {"Appl. Opt."}
-MACRO {apl} {"Appl. Phys. Lett."}
-MACRO {apj} {"Astrophys. J."}
-MACRO {baps} {"Bull. Am. Phys. Soc."}
-MACRO {cpc} {"Computer Phys. Comm."}
-MACRO {cppcf} {"Comments Plasma Phys. Controlled Fusion"}
-MACRO {fed} {"Fusion Eng. Design"}
-MACRO {ft} {"Fusion Tech."}
-MACRO {ieeens} {"IEEE Trans. Nucl. Sci."}
-MACRO {ieeeps} {"IEEE Trans. Plasma Sci."}
-MACRO {ijimw} {"Int. J. Infrared Millimeter Waves"}
-MACRO {ip} {"Infrared Phys."}
-MACRO {jap} {"J. Appl. Phys."}
-MACRO {jcp} {"J. Comput. Phys."}
-MACRO {jetp} {"Sov. Phys.-JETP"}
-MACRO {jfe} {"J. Fusion Energy"}
-MACRO {jfm} {"J. Fluid Mech."}
-MACRO {jgr} {"J. Geophys. Res."}
-MACRO {jmp} {"J. Math. Phys."}
-MACRO {jne} {"J. Nucl. Energy"}
-MACRO {jnec} {"J. Nucl. Energy, Part C"}
-MACRO {jnm} {"J. Nucl. Mater."}
-MACRO {josa} {"J. Opt. Soc. Am."}
-MACRO {jpp} {"J. Plasma Phys."}
-MACRO {jpsj} {"J. Phys. Soc. Jpn"}
-MACRO {jvst} {"J. Vac. Sci. Technol."}
-MACRO {nedf} {"Nucl. Eng. Design/Fusion"}
-MACRO {nf} {"Nucl. Fusion"}
-MACRO {nim} {"Nucl. Instrum. Methods"}
-MACRO {nimpr} {"Nucl. Instrum. Methods Phys. Research"}
-MACRO {nse} {"Nucl. Sci. Eng."}
-MACRO {nt/f} {"Nucl. Tech./Fusion"}
-MACRO {pf} {"Phys. Fluids"}
-MACRO {pfa} {"Phys. Fluids A"}
-MACRO {pfb} {"Phys. Fluids B"}
-MACRO {pl} {"Phys. Lett."}
-MACRO {pla} {"Phys. Lett. A"}
-MACRO {pnas} {"Proc. Nat. Acad. Sci. USA"}
-MACRO {pp} {"Plasma Phys."}
-MACRO {ppcf} {"Plasma Phys. Controlled Fusion"}
-MACRO {prl} {"Phys. Rev. Lett."}
-MACRO {pr} {"Phys. Rev."}
-MACRO {pra} {"Phys. Rev. A"}
-MACRO {ps} {"Physica Scripta"}
-MACRO {rmp} {"Rev. Mod. Phys."}
-MACRO {rsi} {"Rev. Sci. Instrum."}
-MACRO {sjpp} {"Sov. J. Plasma Phys."}
-MACRO {spd} {"Sov. Phys.-Dokl."}
-MACRO {sptp} {"Sov. Phys.-Tech. Phys."}
-MACRO {spu} {"Sov. Phys.-Usp."}
 
 READ
 
