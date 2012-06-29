@@ -13,6 +13,8 @@
     % Feb. 13, 2012
     %   - Removed "Technical Report" prefix
     %   - Year for technical report in parentheses
+    % Jun. 29, 2012
+    %   - Changed format.title to preserve capitalization
 
     % version 0.99b for BibTeX versions 0.99a or later, LaTeX version 2.09.
     % Copyright (C) 1985, all rights reserved.
@@ -580,15 +582,11 @@ FUNCTION {format.edited}
 
 
 % The format.title function is used for non-book-like titles.
-% For most styles we convert to lowercase (except for the very first letter,
-% and except for the first one after a colon (followed by whitespace)),
-% and hope the user has brace-surrounded words that need to stay capitilized;
-% for some styles, however, we leave it as it is in the database.
 
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title quote "t" change.case$ }
+    { title quote }
   if$
 }
 
