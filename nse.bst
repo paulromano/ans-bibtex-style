@@ -854,13 +854,19 @@ FUNCTION {format.pages.a}
 % variations for empty fields.  This doesn't begin a sentence.
 
 FUNCTION {format.vol.num.pages}
-{ volume field.or.null embolden
-  " " swap$ * *
-  pages empty$
+{ volume empty$
     'skip$
-    { duplicate$ empty$
-        { pop$ format.pages.a }
-        { ", " * pages first.page * }
+    { 
+      "," *
+      volume field.or.null embolden
+      " " swap$ * *
+      pages empty$
+        'skip$
+        { duplicate$ empty$
+            { pop$ format.pages.a }
+            { ", " * pages first.page * }
+          if$
+        }
       if$
     }
   if$
@@ -1153,7 +1159,7 @@ FUNCTION {article}
   format.title "title" output.check
   new.block
   crossref missing$
-    { journal field.or.null emphasize ", " *
+    { journal field.or.null emphasize
       format.vol.num.pages 
       format.date empty$
         'skip$
