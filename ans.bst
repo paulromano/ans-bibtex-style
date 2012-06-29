@@ -1230,8 +1230,14 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-  format.edition output
-  format.date "year" output.check
+  format.edition
+  duplicate$ empty$
+    { pop$ " " *
+      before.all 'output.state :=
+    }
+    { output }
+  if$
+  format.date paren "year" output.check
   new.block
   note output
   fin.entry
