@@ -246,6 +246,47 @@ FUNCTION {init.state.consts}
   #3 'after.block :=
 }
 
+% These three functions pop one or two (integer) arguments from the stack
+% and push a single one, either 0 or 1.
+% The 'skip$ in the `and' and `or' functions are used because
+% the corresponding if$ would be idempotent
+
+FUNCTION {not}
+{   { #0 }
+    { #1 }
+  if$
+}
+
+FUNCTION {and}
+{   'skip$
+    { pop$ #0 }
+  if$
+}
+
+FUNCTION {or}
+{   { pop$ #1 }
+    'skip$
+  if$
+}
+
+% Count the real number of characters in a string
+
+INTEGERS { l }
+FUNCTION {string.length} {
+  #1 'l :=
+  { duplicate$ l #1 substring$ "" = not }
+  { l #1 + 'l := }
+  while$
+  pop$
+  l #1 -
+}
+
+% Checks if the variable on top of the stack ends with a quote. If so, it adds
+% #1 on top of the stack, otherwise, it adds #0.
+
+FUNCTION {ends.with.quote}
+{ duplicate$ duplicate$ string.length #1 - #2 substring$ "''" = }
+
 % the variables s and t are temporary string holders
 
 STRINGS { s t }
@@ -253,9 +294,16 @@ STRINGS { s t }
 FUNCTION {output.nonnull}
 { 's :=
   output.state mid.sentence =
-    { ", " * write$ }
+    { ends.with.quote
+        { " "  * write$ }
+        { ", " * write$ }
+      if$
+    }
     { output.state after.block =
-        { "," * write$
+        { ends.with.quote
+            { write$ }
+            { "," * write$ }
+          if$
           newline$
           "\newblock " write$
         }
@@ -313,29 +361,6 @@ FUNCTION {new.block}
 
 FUNCTION {new.sentence}
 { skip$
-}
-
-% These three functions pop one or two (integer) arguments from the stack
-% and push a single one, either 0 or 1.
-% The 'skip$ in the `and' and `or' functions are used because
-% the corresponding if$ would be idempotent
-
-FUNCTION {not}
-{   { #0 }
-    { #1 }
-  if$
-}
-
-FUNCTION {and}
-{   'skip$
-    { pop$ #0 }
-  if$
-}
-
-FUNCTION {or}
-{   { pop$ #1 }
-    'skip$
-  if$
 }
 
 % Sometimes we begin a new block only if the block will be big enough.  The
@@ -505,7 +530,7 @@ FUNCTION {paren}
 FUNCTION {quote}
 { duplicate$ empty$
     { pop$ "" }
-    { "``" swap$ * "''" * }
+    { "``" swap$ * ",''" * }
   if$
 }
 
