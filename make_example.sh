@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pdflatex example
-bibtex example
-pdflatex example
-pdflatex example
+pdflatex -halt-on-error example
+bibtex -terse example
+pdflatex -halt-on-error example
+pdflatex -halt-on-error example

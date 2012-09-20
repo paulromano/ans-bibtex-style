@@ -513,6 +513,13 @@ FUNCTION {emphasize}
   if$
 }
 
+FUNCTION {caps}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\sc " swap$ * "}" * }
+  if$
+}
+
 FUNCTION {embolden}
 { duplicate$ empty$
     { pop$ "" }
