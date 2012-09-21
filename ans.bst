@@ -940,6 +940,16 @@ FUNCTION {format.in.ed.booktitle}
   if$
 }
 
+% The format.proceedings.booktitle function is used for starting out a sentence
+% that begins "Proc. <booktitle>".
+
+FUNCTION {format.proceedings.booktitle}
+{ booktitle empty$
+    { "" }
+    { "Proc. " booktitle * emphasize }
+  if$
+}
+
 % The function empty.misc.check complains if all six fields are empty, and
 % if there's been no sorting or alphabetic-label complaint.
 
@@ -1357,7 +1367,7 @@ FUNCTION {inproceedings}
   format.title "title" output.check
   new.block
   crossref missing$
-    { format.in.ed.booktitle "booktitle" output.check
+    { format.proceedings.booktitle "booktitle" output.check
       format.bvolume output
       format.number.series output
       format.pages output
