@@ -1537,8 +1537,8 @@ FUNCTION {techreport}
   new.block
   format.tr.number output.nonnull
   institution "institution" output.check
-  address output
-  " " * format.date paren * "year" output.check
+  before.all 'output.state :=
+  " " format.date paren * "year" output.check
   new.block
   note output
   fin.entry
