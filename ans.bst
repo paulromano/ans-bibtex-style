@@ -881,8 +881,8 @@ FUNCTION {format.pages.a}
   if$
 }
 
-% The format.vol.num.pages function is for the volume, number, and page range
-% of a journal article.  We use the format:  vol(number):pages, with some
+% The format.vol.num.pages function is for the volume, number, and page range of
+% a journal article.  We use the format: **vol**, *number*, firstpage, with some
 % variations for empty fields.  This doesn't begin a sentence.
 
 FUNCTION {format.vol.num.pages}
@@ -892,6 +892,10 @@ FUNCTION {format.vol.num.pages}
       "," *
       volume field.or.null embolden
       " " swap$ * *
+      number empty$
+        'skip$
+        { ", " * number emphasize * }
+      if$
       pages empty$
         'skip$
         { duplicate$ empty$
