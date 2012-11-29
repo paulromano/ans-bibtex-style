@@ -1,0 +1,12 @@
+# PdfLaTeX output
+*.aux
+*.log
+*.out
+*.pdf
+
+# Bibtex output
+*.blg
+*.bbl
+
+# Emacs temporaries
+*~
