@@ -884,8 +884,8 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pages" pages n.dashify tie.or.space.connect }
-        { "page" pages tie.or.space.connect }
+        { "p." pages n.dashify tie.or.space.connect }
+        { "p." pages tie.or.space.connect }
       if$
     }
   if$
@@ -894,7 +894,7 @@ FUNCTION {format.pages}
 FUNCTION {format.pages.a}
 { pages empty$
     { "" }
-    { "page" pages first.page tie.or.space.connect }
+    { "p." pages first.page tie.or.space.connect }
   if$
 }
 
