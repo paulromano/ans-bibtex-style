@@ -706,6 +706,23 @@ FUNCTION {format.date}
   if$
 }
 
+% Display month and year for inproceedings entries
+
+FUNCTION {format.month.year}
+{ month empty$
+    {  year empty$
+         { "" }
+         { year }
+       if$
+    }
+    { year empty$
+        { month }
+        { month ", " * year * }
+      if$
+    }
+  if$
+}
+
 % The format.btitle is for formatting the title field when it is a book-like
 % entry---the style used here keeps it in uppers-and-lowers and emphasizes it.
 
@@ -1379,10 +1396,10 @@ FUNCTION {inproceedings}
         { organization publisher new.sentence.checkb
           organization output
           publisher output
-          format.date "year" output.check
+          format.month.year "year" output.check
         }
         { address output.nonnull
-          format.date "year" output.check
+          format.month.year "year" output.check
           new.sentence
           organization output
           publisher output
